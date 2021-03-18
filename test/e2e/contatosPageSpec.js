@@ -12,7 +12,6 @@ describe('Página principal', function() {
         pagina.obterUsuarioLogado().then(function(texto) {
             expect(texto.trim().length).toBeGreaterThan(0);
         });
-
     });
 
 
