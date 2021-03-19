@@ -9,6 +9,7 @@ before_install:
   - npm install -g bower@1.8.8
   - npm install -g grunt-cli@0.1.13
   - npm install -g karma@6.2
+  - npm install -g karma-jasmine@4.0
   - npm install -g protractor@7.0
   - webdriver-manager update
   - bower install
