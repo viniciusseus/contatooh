@@ -1,3 +1,4 @@
+---
 language: node_js
 node_js:
   - 10.19
@@ -15,7 +16,6 @@ before_install:
 before_script:
   - grunt
   - cd dist
-  - npm install karma-phantomjs-launcher@0.1 --save-dev
 
- script:
+script:
   - karma start config/karma.config.js --single-run --browsers PhantomJS
