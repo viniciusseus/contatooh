@@ -2,6 +2,15 @@
 var config = require('./config')();
 
 exports.config = {
+    sauceUser : config.sauceUser,
+    sauceKey : config.sauceUser,
+    capabilities : {
+        'name' : config.sauceTestName,
+        'browserName' : 'chrome',
+        'tunnel-identifier': config.travisJobNumber,
+        'build': config.travisBuild
+    },
+
     specs: ['../test/e2e/**/*Spec.js'],
     onPrepare: function() {
         browser.ignoreSynchronization = true;
@@ -13,4 +22,4 @@ exports.config = {
             .sendKeys(config.seleniumUserPassword);
         browser.driver.findElement(by.name('commit')).click();
     }
-}
+};
