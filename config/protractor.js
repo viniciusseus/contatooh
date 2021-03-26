@@ -1,4 +1,5 @@
 // config/protractor.js
+var config = require('./config')();
 
 exports.config = {
     specs: ['../test/e2e/**/*Spec.js'],
@@ -7,9 +8,9 @@ exports.config = {
         browser.driver.get('http://localhost:3000');
         browser.driver.findElement(by.id('entrar')).click();
         browser.driver.findElement(by.id('login_field'))
-            .sendKeys('viniciusseus@gmail.com');
+            .sendKeys(config.seleniumUser);
         browser.driver.findElement(by.id('password'))
-            .sendKeys('V&rmelho1112');
+            .sendKeys(config.seleniumUserPassword);
         browser.driver.findElement(by.name('commit')).click();
     }
 }
